@@ -243,4 +243,4 @@ Before diving into this section, ensure you understand:
 
 ---
 
-*Part of the [AI/ML/LLM Interview Prep](../README.md) repository.*
+*Part of the [AI/ML/LLM Interview Prep](../../README.md) repository.*

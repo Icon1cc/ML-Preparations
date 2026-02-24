@@ -202,4 +202,4 @@ graph TD
 
 ---
 
-*This section is part of the [AI/ML/LLM Interview Preparation](../README.md) repository.*
+*This section is part of the [AI/ML/LLM Interview Preparation](../../README.md) repository.*
