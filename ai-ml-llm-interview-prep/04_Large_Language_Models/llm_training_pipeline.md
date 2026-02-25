@@ -1,4 +1,51 @@
-# LLM Training Pipeline
+# LLM Training Pipeline: Pre-training to RLHF
+
+Understanding the full lifecycle of training a Large Language Model is critical for modern AI engineering interviews. The standard pipeline consists of three main stages: Pre-training, Supervised Fine-Tuning (SFT), and Alignment (RLHF/DPO).
+
+---
+
+## 1. Pre-training (The "Reading the Internet" Phase)
+
+This is the most computationally expensive phase where the model learns the statistical properties of language, facts, and reasoning capabilities.
+
+*   **Objective:** Next-Token Prediction (Self-Supervised Learning). Given a sequence of tokens, predict the next token.
+*   **Data:** Massive web corpora (e.g., CommonCrawl, Wikipedia, Books, GitHub). Data quality is paramount.
+    *   *Preprocessing:* Deduplication, PII removal, toxicity filtering, heuristic filtering (e.g., removing low-quality text).
+*   **Scale:** Trillions of tokens, thousands of GPUs, months of training.
+*   **Architecture Details:**
+    *   Decoder-only Transformers are standard (GPT, Llama, Mistral).
+    *   Techniques like FlashAttention, Rotary Positional Embeddings (RoPE), and SwiGLU activation functions are common.
+*   **Result:** A "Base Model" (e.g., Llama 3 Base, GPT-3). It can complete text but is not a helpful assistant. It might answer "What is the capital of France?" with "What is the capital of Germany?".
+
+## 2. Supervised Fine-Tuning (SFT) (The "Learning to Answer" Phase)
+
+The base model is fine-tuned to act as a conversational assistant. It learns the format of instructions and responses.
+
+*   **Objective:** Next-Token Prediction, but specifically predicting the *response* tokens given a *prompt*. The loss is only calculated on the response tokens (often called "instruction tuning").
+*   **Data:** High-quality, human-annotated prompt-response pairs (thousands to tens of thousands of examples). Quality > Quantity. Examples include Databricks Dolly, ShareGPT, or custom curated datasets.
+*   **Scale:** Can be done on a few GPUs in hours or days.
+*   **Result:** An "Instruct Model" (e.g., Llama 3 Instruct). It tries to follow instructions but might still be biased, unsafe, or easily tricked.
+
+## 3. Alignment / Preference Tuning (The "Becoming Helpful and Harmless" Phase)
+
+This phase aligns the model's behavior with human preferences (Helpful, Honest, Harmless - HHH).
+
+### Method A: Reinforcement Learning from Human Feedback (RLHF)
+The original method used for ChatGPT.
+1.  **Reward Model Training:** Human labelers rank different model responses to the same prompt (e.g., Response A is better than Response B). A separate "Reward Model" is trained on this ranking data to output a scalar score predicting human preference.
+2.  **PPO Optimization:** The SFT model generates responses. The Reward Model scores them. Proximal Policy Optimization (PPO) updates the SFT model's weights to maximize the reward while using a KL-divergence penalty to prevent the model from drifting too far from the original SFT model (preventing "reward hacking" and mode collapse).
+
+### Method B: Direct Preference Optimization (DPO)
+A more modern, stable, and lightweight alternative to RLHF.
+*   **Concept:** Eliminates the need for a separate Reward Model and the complex PPO algorithm.
+*   **How it works:** DPO directly optimizes the policy (the LLM itself) using a specialized loss function that increases the relative probability of preferred responses over rejected responses.
+*   **Advantages:** Mathematically equivalent to RLHF under certain assumptions, but much easier to train, requires less memory, and is less prone to instability.
+
+## Interview Traps & Key Takeaways
+
+*   **Trap:** Confusing SFT with Pre-training. Pre-training is about learning *knowledge and language*; SFT is about learning *behavior and format*.
+*   **Trap:** Thinking RLHF adds knowledge. RLHF/DPO does *not* teach the model new facts; it teaches it *how to present* the facts it already knows in a way humans prefer. If you want to add private knowledge, use RAG or continued pre-training, not RLHF.
+*   **Production Context:** Most AI Engineers will never do Pre-training. You will primarily work with SFT (using LoRA/QLoRA) or Alignment (DPO), or simply use RAG on top of base models.# LLM Training Pipeline
 
 ## Overview
 
