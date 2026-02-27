@@ -1,7 +1,7 @@
 # Case Study: Customer Support Chatbot via Advanced RAG
 
-**Company:** DHL (Logistics & Shipping)
-**Scenario:** DHL's B2B customer support center handles 50,000 queries daily regarding shipping policies, customs regulations, hazardous material rules, and specific tracking statuses. Wait times are averaging 45 minutes. You are tasked with designing an AI chatbot to automate tier-1 support queries using RAG.
+**Company:** Logistics & Shipping Company
+**Scenario:** A B2B logistics company's customer support center handles 50,000 queries daily regarding shipping policies, customs regulations, hazardous material rules, and specific tracking statuses. Wait times are averaging 45 minutes. You are tasked with designing an AI chatbot to automate tier-1 support queries using RAG.
 
 ---
 
@@ -13,7 +13,7 @@
     *   User-specific data (Tracking APIs via SQL/REST).
 *   **Constraints:**
     *   **Zero Hallucination Tolerance:** Giving wrong customs advice can result in massive legal fines and seized cargo.
-    *   **Access Control:** B2B customers must not see internal proprietary DHL logistics documents or other customers' data.
+    *   **Access Control:** B2B customers must not see internal proprietary logistics documents or other customers' data.
 
 ## 2. Architecture Design (Step-by-Step)
 
@@ -38,7 +38,7 @@ Standard RAG isn't enough here because queries require different actions (policy
 ### Step 3: Generation & Guardrails
 1.  **Prompting:**
     ```text
-    System: You are an official DHL support agent. You must ONLY use the provided context. If the answer is not present, say "I will transfer you to a human agent."
+    System: You are an official logistics support agent. You must ONLY use the provided context. If the answer is not present, say "I will transfer you to a human agent."
     Context: [API Data], [RAG Parent Chunks]
     User: [Original Query]
     ```

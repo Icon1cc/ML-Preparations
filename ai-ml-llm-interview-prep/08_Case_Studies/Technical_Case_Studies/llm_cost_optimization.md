@@ -1,6 +1,6 @@
 # Case Study: LLM Cost Optimization
 
-**Scenario:** You deployed a highly successful GenAI summarizing tool for DHL's internal logistics reports. It uses GPT-4o and processes 100,000 documents a day. The product managers love it, but the CFO just saw the AWS/OpenAI bill: It's costing \$50,000 a month. You have been tasked with reducing the inference cost by 80% within 4 weeks without significantly degrading the quality of the summaries.
+**Scenario:** You deployed a highly successful GenAI summarizing tool for a company's internal logistics reports. It uses GPT-4o and processes 100,000 documents a day. The product managers love it, but the CFO just saw the AWS/OpenAI bill: It's costing \$50,000 a month. You have been tasked with reducing the inference cost by 80% within 4 weeks without significantly degrading the quality of the summaries.
 
 ---
 

@@ -5,14 +5,14 @@ Standard RAG (Vector Search) is excellent at finding specific needles in a hayst
 ---
 
 ## 1. The Limitation of Standard RAG
-*   **The Query:** "What are all the subsidiary companies owned by DHL, and what are their primary logistics focuses?"
+*   **The Query:** "What are all the subsidiary companies owned by CompanyX, and what are their primary logistics focuses?"
 *   **The Vector Problem:** This information is likely scattered across 50 different PDF documents. Standard RAG will retrieve the top 5 most semantically similar paragraphs, missing 45 of the subsidiaries entirely. It cannot "reason globally" over the dataset.
 
 ## 2. What is a Knowledge Graph?
 A database structured as nodes (entities) and edges (relationships).
-*   **Node:** `DHL` (Type: Company)
-*   **Node:** `Tobias Meyer` (Type: Person)
-*   **Edge:** `[Tobias Meyer] - (IS_CEO_OF) -> [DHL]`
+*   **Node:** `CompanyX` (Type: Company)
+*   **Node:** `John Doe` (Type: Person)
+*   **Edge:** `[John Doe] - (IS_CEO_OF) -> [CompanyX]`
 
 ## 3. How GraphRAG Works (The Microsoft Approach)
 
@@ -24,7 +24,7 @@ You do not just chunk text and embed it. You use an LLM to actively "read" your 
 4.  **Summarization:** An LLM generates a text summary for every single community cluster.
 
 ### Phase 2: Global Search (The Payoff)
-When a user asks a high-level, "global" question ("What are the main themes in DHL's Q3 reports?"):
+When a user asks a high-level, "global" question ("What are the main themes in CompanyX's Q3 reports?"):
 1.  Instead of searching raw text vectors, the system retrieves the pre-computed **Community Summaries**.
 2.  The LLM reads all the community summaries and synthesizes a comprehensive, globally-aware answer.
 

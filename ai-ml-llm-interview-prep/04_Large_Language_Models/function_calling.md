@@ -15,7 +15,7 @@ Function calling is the bridge that turns an LLM from a passive text generator i
     // Example Tool Schema
     {
       "name": "get_delivery_status",
-      "description": "Get the current location of a DHL tracking number",
+      "description": "Get the current location of a shipment tracking number",
       "parameters": {
         "type": "object",
         "properties": {
@@ -27,7 +27,7 @@ Function calling is the bridge that turns an LLM from a passive text generator i
     ```
 2.  **LLM Decision:** The LLM reads the user prompt: *"Where is package 12345?"* It recognizes it cannot answer this from memory. It stops normal text generation and instead outputs a structured call:
     `{"name": "get_delivery_status", "arguments": {"tracking_id": "12345"}}`
-3.  **Backend Execution:** Your Python application intercepts this output, extracts the `tracking_id`, and makes a real SQL query or REST API call to DHL's servers.
+3.  **Backend Execution:** Your Python application intercepts this output, extracts the `tracking_id`, and makes a real SQL query or REST API call to the logistics server.
     *Result:* `{"status": "Out for delivery in Berlin"}`
 4.  **The Return Trip:** You append this raw JSON result to the conversation history as a "Tool Message" and call the LLM again.
 5.  **Final Generation:** The LLM reads the tool's output and synthesizes a human-readable response: *"Your package 12345 is currently out for delivery in Berlin!"*

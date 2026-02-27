@@ -6,7 +6,7 @@ Time series data is a sequence of data points indexed in time order (e.g., daily
 
 ## 1. Components of a Time Series
 A time series is mathematically decomposed into three distinct components:
-1.  **Trend:** The long-term progression of the series (e.g., DHL package volume is generally increasing year over year).
+1.  **Trend:** The long-term progression of the series (e.g., package volume is generally increasing year over year).
 2.  **Seasonality:** Repeating, predictable patterns that occur at fixed intervals. (e.g., Volume spikes every December for Christmas, and drops every Sunday).
 3.  **Residual (Noise/Irregular):** The random, unpredictable variance left over after removing the trend and seasonality.
 

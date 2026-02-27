@@ -1,6 +1,6 @@
 # Case Study: Delivery Time Prediction
 
-**Scenario:** "DHL is launching a premium 'Exact Hour' delivery service for medical supplies. We need a model that predicts the exact delivery time (ETA) for a specific package currently in transit in a delivery van. You have real-time GPS of the van and the manifest of packages. Design this ML system."
+**Scenario:** "A logistics company is launching a premium 'Exact Hour' delivery service for medical supplies. We need a model that predicts the exact delivery time (ETA) for a specific package currently in transit in a delivery van. You have real-time GPS of the van and the manifest of packages. Design this ML system."
 
 ---
 

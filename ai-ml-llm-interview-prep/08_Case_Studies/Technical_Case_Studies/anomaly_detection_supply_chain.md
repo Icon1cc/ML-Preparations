@@ -1,7 +1,7 @@
 # Case Study: Anomaly Detection in the Supply Chain
 
-**Company:** Global Logistics (e.g., DHL)
-**Scenario:** DHL moves millions of containers annually. Occasionally, things go wrong: a container is stolen, damaged, or diverted for smuggling. We have sensor data (GPS, Temperature, Humidity, Accelerometer) from IoT devices inside the containers. Design an ML system to detect these anomalies in real-time.
+**Company:** Global Logistics
+**Scenario:** A global logistics company moves millions of containers annually. Occasionally, things go wrong: a container is stolen, damaged, or diverted for smuggling. We have sensor data (GPS, Temperature, Humidity, Accelerometer) from IoT devices inside the containers. Design an ML system to detect these anomalies in real-time.
 
 ---
 
@@ -56,4 +56,4 @@ Since we lack labels, how do we know if it works?
 *   *Tier 1 (High):* Direct human intervention.
 *   *Tier 2 (Medium):* Flag for secondary digital documentation check.
 *   *Tier 3 (Low):* Log for future historical carrier auditing." 
-This shows you understand the operational reality of DHL.
+This shows you understand the operational reality of logistics operations.

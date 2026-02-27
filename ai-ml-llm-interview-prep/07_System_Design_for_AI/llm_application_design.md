@@ -41,7 +41,7 @@ In standard software, you have unit tests. In LLM apps, you have **Evals**.
 ## 7. Context Management Strategies
 *   **Window Sliding:** For long chats, only keep the last $N$ turns to save tokens.
 *   **Summarization:** When the chat history gets too long, ask the LLM to summarize the past 20 messages into a single "Memory" block, then clear the history.
-*   **Knowledge Graph (GraphRAG):** Instead of just vector chunks, store information as a graph of entities and relationships. This allows the LLM to answer complex, multi-hop questions like "How are the CEO of DHL and the CEO of UPS related?"
+*   **Knowledge Graph (GraphRAG):** Instead of just vector chunks, store information as a graph of entities and relationships. This allows the LLM to answer complex, multi-hop questions like "How are the CEO of Company X and the CEO of Company Y related?"
 
 ## Interview Tip: "Buy vs. Build"
 If asked how to build an LLM app:

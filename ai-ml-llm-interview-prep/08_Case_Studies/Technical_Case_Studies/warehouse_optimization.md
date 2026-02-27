@@ -1,6 +1,6 @@
 # Case Study: Warehouse Operations Optimization
 
-**Company:** Global Logistics (e.g., DHL, Amazon)
+**Company:** Global Logistics
 **Scenario:** A massive fulfillment center uses autonomous robots and human pickers to gather items for shipping. Currently, the assignment of tasks is naive (First-In, First-Out). This leads to massive inefficiencies, with robots travelling long empty distances, and aisles getting congested. Design an ML system to optimize the warehouse routing and task batching.
 
 ---

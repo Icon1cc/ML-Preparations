@@ -32,7 +32,7 @@ How does an agent remember a user it hasn't spoken to in a month?
 
 ### B. Graph-Based Memory (Knowledge Graphs)
 *   Instead of raw text chunks, the system explicitly extracts facts and updates a graph.
-*   `User(ID:1) -[PREFERS]-> Carrier(DHL)`
+*   `User(ID:1) -[PREFERS]-> Carrier(ExpressShip)`
 *   This prevents the "contradiction problem" found in Vector Memory (where old facts and new facts are both retrieved, confusing the LLM). In a graph, an update simply overwrites the edge.
 
 ## 3. Agentic Memory Architectures (e.g., MemGPT)

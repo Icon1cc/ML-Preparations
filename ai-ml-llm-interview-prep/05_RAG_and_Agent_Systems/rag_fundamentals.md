@@ -5,7 +5,7 @@ RAG is the industry-standard architecture for giving Large Language Models (LLMs
 ---
 
 ## 1. The Core Problem RAG Solves
-LLMs are frozen in time at their training cutoff. They confidently hallucinate when asked about proprietary data (e.g., "What is DHL's Q3 internal revenue report?") because they never saw it during training.
+LLMs are frozen in time at their training cutoff. They confidently hallucinate when asked about proprietary data (e.g., "What is Company X's Q3 internal revenue report?") because they never saw it during training.
 **Solution:** Don't rely on the LLM's internal memory. Retrieve the relevant documents and put them directly in the prompt.
 
 ## 2. The RAG Architecture

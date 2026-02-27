@@ -1,7 +1,7 @@
 # Case Study: Document Processing with LLMs
 
-**Company:** Global Logistics (e.g., DHL)
-**Scenario:** DHL receives thousands of "Bill of Lading" (BoL) and Customs Declaration documents daily in various formats (PDF, JPG, Scanned faxes). These documents contain critical data like: Shipper Name, Consignee, Item Weights, and Harmonized System (HS) codes. Manual entry is slow and error-prone. Design an AI system to automate this.
+**Company:** Global Logistics
+**Scenario:** A logistics company receives thousands of "Bill of Lading" (BoL) and Customs Declaration documents daily in various formats (PDF, JPG, Scanned faxes). These documents contain critical data like: Shipper Name, Consignee, Item Weights, and Harmonized System (HS) codes. Manual entry is slow and error-prone. Design an AI system to automate this.
 
 ---
 
@@ -30,7 +30,7 @@ Use a model that natively understands both text and position.
 
 ### Step 3: Entity Resolution & Validation
 *   **HS Code Validation:** The extracted HS code (e.g., `8517.12`) must be validated against a master database of customs codes. If the code doesn't exist, flag it for human review.
-*   **Fuzzy Matching:** "DHL Express" and "DHL Exp." should resolve to the same internal Entity ID. Use a library like `RapidFuzz` or a small Bi-Encoder model.
+*   **Fuzzy Matching:** "Express Logistics" and "Express Log." should resolve to the same internal Entity ID. Use a library like `RapidFuzz` or a small Bi-Encoder model.
 
 ## 3. The "Human-in-the-Loop" (HITL) Workflow
 For high-stakes logistics, 100% automation is impossible.

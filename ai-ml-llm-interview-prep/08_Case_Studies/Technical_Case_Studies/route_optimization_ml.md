@@ -1,6 +1,6 @@
 # Case Study: ML for Dynamic Route Optimization
 
-**Company:** Logistics / Ride-Hailing (DHL, Uber, FedEx)
+**Company:** Logistics / Ride-Hailing
 **Scenario:** A driver has 50 packages to deliver today. A standard GPS routing algorithm (like Dijkstra or A*) calculates the shortest distance. However, it assumes a static average speed limit. In reality, traffic, weather, and parking availability drastically alter transit times. Design an ML system to predict dynamic edge transit times to feed into the routing engine.
 
 ---
@@ -23,7 +23,7 @@ This is a spatio-temporal problem. The features must capture both *where* we are
 ### B. Temporal & Dynamic Features
 *   `Hour_of_Day` and `Day_of_Week` (captures rush hour seasonality).
 *   `Current_Weather_Severity` (Rain, Snow).
-*   `Rolling_Congestion_Index`: (The average speed of all DHL trucks in a 2-mile radius over the last 15 minutes. This is a crucial real-time feature to capture sudden accidents).
+*   `Rolling_Congestion_Index`: (The average speed of all delivery vehicles in a 2-mile radius over the last 15 minutes. This is a crucial real-time feature to capture sudden accidents).
 
 ## 3. Model Architecture
 

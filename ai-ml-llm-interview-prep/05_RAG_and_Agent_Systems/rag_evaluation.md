@@ -30,7 +30,7 @@ RAGAS formalizes this into four core metrics using "LLM-as-a-Judge" (using a pow
 
 ## 4. Answer Relevance (Generation/End-to-End Metric)
 *   **Question:** Does the generated answer directly address the user's original query?
-*   **Mechanism:** This is clever. The LLM-Judge looks at the generated answer and tries to *reverse-engineer* what the question was. If the reverse-engineered question matches the original user query (measured via cosine similarity of their embeddings), the relevance is high. If the user asked "How do I ship a battery?", and the system answered "DHL was founded in 1969," the reverse-engineered question will not match.
+*   **Mechanism:** This is clever. The LLM-Judge looks at the generated answer and tries to *reverse-engineer* what the question was. If the reverse-engineered question matches the original user query (measured via cosine similarity of their embeddings), the relevance is high. If the user asked "How do I ship a battery?", and the system answered "The company was founded in 1969," the reverse-engineered question will not match.
 *   **Fix:** If this is low, the prompt might be poorly structured, causing the LLM to get confused about what it's supposed to do.
 
 ## Setting up an Eval Pipeline

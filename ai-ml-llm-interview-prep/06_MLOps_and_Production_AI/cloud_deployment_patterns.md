@@ -40,7 +40,7 @@ You deploy the model code, and the cloud provider handles the infrastructure, sc
 *   Similar to Canary, but focused on measuring *business impact* rather than system stability. Traffic is split evenly (50/50), and statistically rigorous hypothesis testing is used to determine if the new model actually drives more revenue or better user engagement.
 
 ## 4. Edge Deployment (On-Device)
-Deploying the model directly onto a mobile phone, IoT device, or a scanner gun in a DHL warehouse.
+Deploying the model directly onto a mobile phone, IoT device, or a scanner gun in a a warehouse.
 *   **Pros:** Zero network latency (works offline), zero cloud compute costs, maximum data privacy.
 *   **Cons:** Devices have terrible CPUs, minimal RAM, and battery limits. 
 *   **Techniques:** Requires heavy model compression: Quantization (INT8), Pruning, and Knowledge Distillation. Models must be exported to mobile-optimized formats like TFLite, CoreML (Apple), or ONNX.

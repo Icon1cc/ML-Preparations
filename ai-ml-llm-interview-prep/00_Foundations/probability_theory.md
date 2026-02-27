@@ -36,7 +36,7 @@ $$P(H|E) = \frac{P(E|H) \cdot P(H)}{P(E)}$$
 
 ### B. Poisson
 Models the probability of a given number of events occurring in a fixed interval of time or space.
-*   **Use Case:** Predicting the number of customer support calls DHL receives per hour, or the number of trucks arriving at a warehouse dock in a day.
+*   **Use Case:** Predicting the number of customer support calls a company receives per hour, or the number of trucks arriving at a warehouse dock in a day.
 
 ### C. Normal (Gaussian) Distribution
 The "Bell Curve." It appears everywhere in nature due to the **Central Limit Theorem**.

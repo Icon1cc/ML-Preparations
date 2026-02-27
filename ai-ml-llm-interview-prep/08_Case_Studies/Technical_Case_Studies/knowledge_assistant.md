@@ -1,7 +1,7 @@
 # Case Study: Enterprise Knowledge Assistant (Agent)
 
-**Company:** Global Logistics (e.g., DHL)
-**Scenario:** DHL has 100,000 employees globally. Employees waste an average of 45 minutes a day trying to find internal information across Confluence, Jira, Workday (HR), and proprietary logistics databases. Build an AI Agent (an "internal ChatGPT") that can answer any employee question securely and take basic actions.
+**Company:** Global Logistics
+**Scenario:** A large logistics company has 100,000 employees globally. Employees waste an average of 45 minutes a day trying to find internal information across Confluence, Jira, Workday (HR), and proprietary logistics databases. Build an AI Agent (an "internal ChatGPT") that can answer any employee question securely and take basic actions.
 
 ---
 

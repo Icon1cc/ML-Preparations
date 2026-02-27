@@ -43,7 +43,7 @@ Predictions are generated on-the-fly, synchronously, the exact moment the user r
 
 A middle ground. Predictions are triggered by real-time events, but processed asynchronously via message queues.
 
-*   **Example:** DHL dynamic route ETA updates. As a truck drives, its GPS pings every 10 seconds.
+*   **Example:** dynamic route ETA updates. As a truck drives, its GPS pings every 10 seconds.
 *   **Workflow:**
     1. GPS pings are sent to a message broker (Apache Kafka).
     2. A stream processing engine (Apache Flink or Spark Streaming) consumes the ping.

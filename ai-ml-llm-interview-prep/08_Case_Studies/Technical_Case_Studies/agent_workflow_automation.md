@@ -1,7 +1,7 @@
 # Case Study: Agent Workflow Automation (Customer Support)
 
-**Company:** Global Logistics (e.g., DHL)
-**Scenario:** When a massive storm hits an airport hub, thousands of flights are grounded. DHL receives a surge of 50,000 angry customer emails asking "Where is my package?" and "I demand a refund." Human agents cannot handle the spike. Design an autonomous AI workflow to resolve these emails end-to-end without human intervention.
+**Company:** Global Logistics
+**Scenario:** When a massive storm hits an airport hub, thousands of flights are grounded. A logistics company receives a surge of 50,000 angry customer emails asking "Where is my package?" and "I demand a refund." Human agents cannot handle the spike. Design an autonomous AI workflow to resolve these emails end-to-end without human intervention.
 
 ---
 
@@ -22,7 +22,7 @@ An email arrives. It is passed to a fast, cheap model (e.g., Llama-3-8B).
     {
       "intent": "refund_request",
       "sentiment": "highly_angry",
-      "tracking_number": "DHL-1234598",
+      "tracking_number": "LOG-1234598",
       "is_urgent_medical": false
     }
     ```
@@ -30,7 +30,7 @@ An email arrives. It is passed to a fast, cheap model (e.g., Llama-3-8B).
 
 ### Step 2: Data Enrichment (The API Step)
 The workflow executes deterministic Python code based on the tracking number.
-*   Calls internal DHL database: `SELECT status, delay_reason, item_value FROM shipments WHERE id = 'DHL-1234598'`.
+*   Calls internal database: `SELECT status, delay_reason, item_value FROM shipments WHERE id = 'LOG-1234598'`.
 *   *Result:* Status is "Delayed", Reason is "Weather (Storm XYZ)", Value is $100.
 
 ### Step 3: Business Logic Evaluation
@@ -40,7 +40,7 @@ We do *not* use the LLM to decide if the customer gets a refund. We use hardcode
 
 ### Step 4: Generation (The Draft Agent)
 The enriched data and the approved action are passed to a highly capable drafting model (e.g., GPT-4o or Claude 3.5 Sonnet).
-*   **Prompt:** `You are a polite DHL agent. The customer's package is delayed due to a storm. Apologize empathetically. Inform them the package is safe and will arrive in 48 hours. Offer the approved $20 partial refund for the inconvenience. Do NOT promise anything else.`
+*   **Prompt:** `You are a polite logistics customer service agent. The customer's package is delayed due to a storm. Apologize empathetically. Inform them the package is safe and will arrive in 48 hours. Offer the approved $20 partial refund for the inconvenience. Do NOT promise anything else.`
 *   **Output:** The model generates a highly empathetic, customized email draft.
 
 ### Step 5: The Critic (Output Guardrail)

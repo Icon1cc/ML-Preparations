@@ -10,11 +10,11 @@ An LLM on its own is just a text generator. An **Agent** is an LLM equipped with
 The foundational agent framework. It forces the LLM to think before taking an action.
 *   **Loop:** `Thought` -> `Action` -> `Observation` -> (Repeat)
 *   **Example:**
-    *   *Thought:* I need to find the CEO of DHL. I should search Google.
-    *   *Action:* `Search("CEO of DHL")`
-    *   *Observation:* "Tobias Meyer is the CEO of DHL."
+    *   *Thought:* I need to find the CEO of Company X. I should search Google.
+    *   *Action:* `Search("CEO of Company X")`
+    *   *Observation:* "Jane Smith is the CEO of Company X."
     *   *Thought:* I have the answer. I will respond to the user.
-    *   *Final Answer:* "The CEO is Tobias Meyer."
+    *   *Final Answer:* "The CEO is Jane Smith."
 *   **Pros:** Easy to implement, highly effective for straightforward tool use.
 *   **Cons:** Struggles with long, complex multi-step tasks (loses context or gets stuck in an infinite loop).
 

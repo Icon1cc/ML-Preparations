@@ -42,5 +42,5 @@ The Senior Data Scientist's choice for messy, real-world spatial data.
 
 ## Interview Strategy: Business Application
 Clustering is rarely the final product. It is a feature engineering tool.
-*   **Scenario:** DHL wants to build a recommendation engine for B2B clients, but they have no labeled user profiles.
+*   **Scenario:** A company wants to build a recommendation engine for B2B clients, but they have no labeled user profiles.
 *   **Application:** "I would use **K-Means** on the historical shipping data (volume, frequency, international vs. domestic) to group our 50,000 clients into 5 distinct 'Shipping Personas'. I would then take that Persona ID (Cluster 1-5) and use it as a powerful categorical input feature for a downstream Supervised Learning model."

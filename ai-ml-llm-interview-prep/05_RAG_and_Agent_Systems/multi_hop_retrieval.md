@@ -12,9 +12,9 @@ Multi-hop queries are questions that cannot be answered by retrieving a single d
 Using an Agent framework (like LangChain or AutoGen) equipped with a search tool.
 1.  **Thought:** I need to find out who acquired Acme Logistics first.
 2.  **Action:** `VectorSearch("Who acquired Acme Logistics?")`
-3.  **Observation:** "DHL acquired Acme Logistics in 2023."
-4.  **Thought:** Now I need to find the CEO of DHL.
-5.  **Action:** `VectorSearch("Who is the CEO of DHL?")`
+3.  **Observation:** "Company A acquired Acme Logistics in 2023."
+4.  **Thought:** Now I need to find the CEO of Company A.
+5.  **Action:** `VectorSearch("Who is the CEO of Company A?")`
 6.  **Observation:** "Tobias Meyer."
 7.  **Final Answer:** "The CEO is Tobias Meyer."
 

@@ -1,6 +1,6 @@
 # Framework for End-to-End ML System Design Interviews
 
-ML System Design interviews (like those at FAANG, Uber, or DHL) are notoriously unstructured. You are given a vague prompt like "Design a recommendation system for Netflix" or "Design a route optimization engine."
+ML System Design interviews (like those at FAANG or major tech companies) are notoriously unstructured. You are given a vague prompt like "Design a recommendation system for Netflix" or "Design a route optimization engine."
 
 To succeed, you must drive the conversation using a structured framework. Do not jump straight to the model. Use this 7-step framework.
 
